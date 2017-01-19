@@ -50,7 +50,9 @@ app.use('/profile', profile);
 app.use('/login', login);
 app.use('/logout',logout);
 
-mysql.testConnection();
+mysql.connect(mysql.MODE_PRODUCTION, function() {
+	console.log("Database connected...");
+});
 
 var appEnv = cfenv.getAppEnv();
 
