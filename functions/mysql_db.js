@@ -23,7 +23,7 @@ var config = {
     host: 'us-cdbr-iron-east-04.cleardb.net',
     user: 'b7551b781ed3ea',
     password: 'e1756c85',
-    database: 'ad_7a7185b21d0a2ae',
+    name: 'ad_7a7185b21d0a2ae',
     port: 3306
 };
 

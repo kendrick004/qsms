@@ -26,7 +26,6 @@ var errorHandler = require('errorhandler');
 app.use(session({secret:'qsms', resave:false, saveUninitialized: true}));
 
 //all environments
-app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
