@@ -1,0 +1,380 @@
+<div id="edit-opp-card" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog animated bounceIn" style="width:70%">
+        <div class="modal-content">
+            <div class="modal-header bg-aqua">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h5 class="modal-title">
+                    <input id="modal_id" type="hidden"/>
+                    <input id="modal_project_name" size="" maxlength="50" type="text" placeholder="Project name..." style=" font-size:25px;z-index:1;cursor:pointer;border:hidden; background-color:transparent; outline:none; width:100%;"></input>
+                </h5>
+            </div>
+            <div id="style-2" class="modal-body">
+                <div class="row">
+                    <button class="btn btn-link visible-xs-block modal-nav-btn" data-toggle="sidebar" data-target="#modal-sidebar"><i class="glyphicon glyphicon-menu-hamburger"></i></button>
+                    <div id="modal-sidebar" class="hidden-xs col-sm-4 sidebar" style=" margin-top:-20px;border-right:solid thin #83C9F4; ">
+                        <!--SIDEBAR HERE-->
+                        <div class="row">
+                            <div class="col-md-12 visible-xs-block" style="margin-bottom: 15px;">
+                                <button class="btn btn-link" data-toggle="sidebar" data-target="#modal-sidebar"><i class="glyphicon glyphicon-remove"></i></button>
+                            </div>
+                            <div class="container col-md-12 col-sm-12 col-xs-12" style="margin:0; padding:0;">
+                                <ul class="sidebar-nav modal-sidebar-nav col-md-12 col-sm-12 col-xs-12" style="margin:0; padding:0">
+                                    <div class="text-center header">
+                                        <h5 style="background-color:#bdf0fc; display:block; padding:20px; margin:0"><span class="fa fa-plus"></span>&nbsp;Add Details</h5>
+                                    </div>
+                                    <li>
+                                        <a data-target="#proj_details" data-toggle="collapse">
+                                            <span class=" pull-right fa fa-chevron-down" style="margin-top:12px; margin-right:10px;"></span>                                            Project Details
+                                        </a>
+                                    </li>
+                                    <div class="collapse" id="proj_details" style=" padding-left:10px;background-color:#f7f7f7">
+                                        <li class="active-modalbar" data-target="#input_project_description" data-toggle="collapse">
+                                            <a>Project Description</a>
+                                        </li>
+                                        <li data-target="#input_project_type" data-toggle="collapse">
+                                            <a>Project Type</a>
+                                        </li>
+                                        <li data-target="#input_total_revenue" data-toggle="collapse">
+                                            <a>Total Revenue</a>
+                                        </li>
+                                        <li data-target="#input_gross_profit" data-toggle="collapse">
+                                            <a>Gross Profit</a>
+                                        </li>
+                                    </div>
+                                    <li>
+                                        <a data-target="#co_details" data-toggle="collapse">
+                                            <span class=" pull-right fa fa-chevron-down" style="margin-top:12px; margin-right:10px;"></span>                                            Company Details
+                                        </a>
+                                    </li>
+                                    <div class="collapse" id="co_details" style=" padding-left:10px;background-color:#f7f7f7">
+                                        <li data-target="#input_company" data-toggle="collapse">
+                                            <a>Company</a>
+                                        </li>
+                                        <li data-target="#input_industry" data-toggle="collapse">
+                                            <a>Industry</a>
+                                        </li>
+                                        <li data-target="#input_address" data-toggle="collapse">
+                                            <a>Address</a>
+                                        </li>
+                                        <li data-target="#input_contact_person" data-toggle="collapse">
+                                            <a>Contact Person</a>
+                                        </li>
+                                        <li data-target="#input_designation" data-toggle="collapse">
+                                            <a>Designation</a>
+                                        </li>
+                                        <li data-target="#input_contact_no" data-toggle="collapse">
+                                            <a>Contact number</a>
+                                        </li>
+                                        <li data-target="#input_email_address" data-toggle="collapse">
+                                            <a>Email</a>
+                                        </li>
+                                    </div>
+                                    <li>
+                                        <a data-target="#proj_ass" data-toggle="collapse">
+                                            <span class=" pull-right fa fa-chevron-down" style="margin-top:12px; margin-right:10px;"></span>                                            Project Assigment
+                                        </a>
+                                    </li>
+                                    <div class="collapse" id="proj_ass" style=" padding-left:10px;background-color:#f7f7f7">
+                                        <li data-target="#input_lead_from" data-toggle="collapse">
+                                            <a>Lead from</a>
+                                        </li>
+                                        <li data-target="#input_assigned_to" data-toggle="collapse">
+                                            <a>Assigned to</a>
+                                        </li>
+                                    </div>
+                                    <li>
+                                        <a data-target="#proj_need" data-toggle="collapse">
+                                            <span class=" pull-right fa fa-chevron-down" style="margin-top:12px; margin-right:10px;"></span>                                            Project Schedule
+                                        </a>
+                                    </li>
+                                    <div class="collapse" id="proj_need" style=" padding-left:10px;background-color:#f7f7f7">
+                                        <li data-target="#input_budget" data-toggle="collapse">
+                                            <a>Budget</a>
+                                        </li>
+                                        <li data-target="#input_business_need" data-toggle="collapse">
+                                            <a>Business need</a>
+                                        </li>
+                                        <li data-target="#input_authority" data-toggle="collapse">
+                                            <a>Authority</a>
+                                        </li>
+                                        <li data-target="#input_timeline" data-toggle="collapse">
+                                            <a>Timeline</a>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--BAWAL MAWALA-->
+                    </div>
+                    <!--END OF SIDEBAR-->
+                    <!--CONTENT HERE-->
+                    <!--Project Details-->
+                    <!--Prodject description-->
+                    <div class="col-sm-8">
+                        <div class="header">Project Details</div>
+                        <div class="divider"></div>
+                        <div class="col-md-12 collapse" id="input_project_description" style="margin-top: 10px;">
+                            <label for="style-2" class="col-md-12"><span class="fa fa-close pull-left" data-target="#input_project_description" data-toggle="collapse" style="cursor: pointer;"></span>Project Description</label>
+                            <textarea class="form-control" rows="5" id="modal_project_description" placeholder="Project Description..." style="max-width:100%;"></textarea>
+                        </div>
+                        <!--/Prodject description-->
+                        <div class="col-md-12 collapse" id="input_project_type" style="margin-top: 10px;">
+                            <label for="type_id" class="pull-left col-md-3"><span class="fa fa-close pull-left" data-target="#input_project_type" data-toggle="collapse" style="cursor: pointer;"></span>Project Type </label>
+                            <div class="col-md-9">
+                                <select id="modal_project_type" name="projType.id" class="form-control select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                    <option value="Hardware">Hardware</option>
+                                    <option value="Software">Software</option>
+                                    <option value="Systems Integration">Systems Integration</option>
+                                    <option value="HW/SW Maintenance">HW/SW Maintenance</option>
+                                    <option value="Managed Services">Managed Services</option>
+                                    <option value="Hybrid Cloud">Hybrid Cloud</option>
+                                    <option value="Professional Services">Professional Services</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!--/Project Type-->
+                        <!--total revenue-->
+                        <div class="col-md-12 collapse" id="input_total_revenue" style="margin-top: 10px;">
+                            <label for="totalRev" class="col-md-3 pull-left"><span class="fa fa-close pull-left" data-target="#input_total_revenue" data-toggle="collapse" style="cursor: pointer;"></span>Total Revenue </label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-fw fa-money"></i></span>
+                                    <input class="number" id="modal_total_revenue" name="totalRev" type="text" placeholder="0.00" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--/Total revenue-->
+                        <!--Gross Profit-->
+                        <div class="col-md-12 collapse" id="input_gross_profit" style="margin-top: 10px;">
+                            <label for="grossProfit" class="col-md-3"><span class="fa fa-close pull-left" data-target="#input_gross_profit" data-toggle="collapse" style="cursor: pointer;"></span>Gross Proft </label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-fw fa-money"></i></span>
+                                    <input class="number" id="modal_gross_profit" name="grossProfit" placeholder="0.00" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--/Gross Profit-->
+                        <!--Project Type-->
+                        <!--/Project Details-->
+                        <!--Company Details-->
+                        <div class="header" style="margin-top: 10px;">Company Details</div>
+                        <div class="divider"></div>
+                        <div class="form-group col-md-12 collapse" id="input_company">
+                            <input type="hidden" name="returnPage" value="index">
+                            <label for="company" class="control-label col-md-3">
+                                <span class="fa fa-close pull-left" data-target="#input_company" data-toggle="collapse" style="cursor: pointer;"></span> Company
+                            </label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-fw fa-building"></i></span>
+                                    <input id="modal_company" name="company" class="form-control" placeholder="Company" type="text" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12 collapse" id="input_industry">
+                            <label for="industry" class="control-label col-md-3">
+                                <span class="fa fa-close pull-left" data-target="#input_industry" data-toggle="collapse" style="cursor: pointer;"></span> Industry
+                            </label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-fw fa-industry"></i></span>
+                                    <select id="modal_industry" name="industry.id" class="form-control select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                                <option value="FSI">FSI</option>
+                                                <option value="Communications & Media">Communications & Media</option>
+                                                <option value="Government">Government</option>
+                                                <option value="Retail & Distribution">Retail & Distribution</option>
+                                                <option value="Manufacturing">Manufacturing</option>
+                                                <option value="Utilities">Utilities</option>
+                                                <option value="Services (Professional & Consumers)">Services (Professional & Consumers)</option>
+                                                <option value="Transportation">Transportation</option>
+                                                <option value="Healthcare">Healthcare</option>
+                                                <option value="Education">Education</option>
+                                                <option value="Others">Others</option>
+                                            </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12 collapse" id="input_address">
+                            <label for="address" class="control-label col-md-3">
+                                <span class="fa fa-close pull-left" data-target="#input_address" data-toggle="collapse" style="cursor: pointer;"></span> Address
+                            </label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-fw fa-map"></i></span>
+                                    <input id="modal_address" name="address" class="form-control" placeholder="Address" type="text" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12 collapse" id="input_contact_person">
+                            <label for="contactP" class="control-label col-md-3">
+                                <span class="fa fa-close pull-left" data-target="#input_contact_person" data-toggle="collapse" style="cursor: pointer;"></span> Contact Person
+                            </label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
+                                    <input id="modal_contact_person" name="contactP" class="form-control" placeholder="Contact Person" type="text" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12 collapse" id="input_designation">
+                            <label for="designation" class="control-label col-md-3">
+                                <span class="fa fa-close pull-left" data-target="#input_designation" data-toggle="collapse" style="cursor: pointer;"></span> Designation
+                            </label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-fw fa-sitemap"></i></span>
+                                    <input id="modal_designation" name="designation" class="form-control" placeholder="Designation" type="text" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12 collapse" id="input_contact_no">
+                            <label for="contactNum" class="control-label col-md-3">
+                                <span class="fa fa-close pull-left" data-target="#input_contact_no" data-toggle="collapse" style="cursor: pointer;"></span> Contact No.
+                            </label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-fw fa-phone"></i></span>
+                                    <input id="modal_contact_no" name="contactNum" class="form-control" placeholder="Contact Number" type="text" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12 collapse" id="input_email_address">
+                            <label for="email" class="control-label col-md-3">
+                                <span class="fa fa-close pull-left" data-target="#input_email_address" data-toggle="collapse" style="cursor: pointer;"></span> E-Mail
+                            </label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-fw fa-phone"></i></span>
+                                    <input id="modal_email_address" name="email" class="form-control" placeholder="E-Mail" type="text" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <!--/Company Details-->
+                        <!--Project Assigment-->
+                        <div class="header" style="margin-top: 10px;">Project Assigment</div>
+                        <div class="divider"></div>
+                        <div class="col-md-12">
+                            <div class="col-md-12 collapse" id="input_lead_from">
+                                <div class="row">
+                                    <label for="lead_id" class="control-label col-md-3">
+                                        <span class="fa fa-close pull-left" data-target="#input_lead_from" data-toggle="collapse" style="cursor: pointer;"></span> Lead From
+                                    </label>
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-fw fa-group"></i></span>
+                                            <select id="modal_lead_from" name="lead.id" class="form-control select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                                <option value="Sales">Sales</option>
+                                                <option value="Marketing">Marketing</option>
+                                                <option value="QNX Employee">QNX Employee</option>
+                                                <option value="Business Partner">Business Partner</option>
+                                                <option value="External Consultant">External Consultant</option>
+                                                <option value="Others">Others</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 collapse" id="input_assigned_to" style="margin-top: 20px;">
+                                <div class="row">
+                                    <label for="assigned_id" class="control-label col-md-3">
+                                        <span class="fa fa-close pull-left" data-target="#input_assigned_to" data-toggle="collapse" style="cursor: pointer;"></span> Assigned To
+                                    </label>
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
+                                            <select id="modal_assigned_to" name="assigned.id" class="form-control select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                                <% for(var i=0; i < users.rows.length; i++) { %>
+                                                    <option value="<%= users.rows[i].id %>"><%= users.rows[i].first_name %> <%= users.rows[i].last_name %></option>
+                                                <% } %>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/Project assigment-->
+                        <!--project schedule-->
+                        <div class="header">Project Schedule</div>
+                        <div class="divider"></div>
+                        <div class="col-md-12">
+                            <div class="col-md-12 collapse" id="input_budget">
+                                <div class="row">
+                                    <label for="budget" class="control-label col-md-4">
+                                        <span class="fa fa-close pull-left" data-target="#input_budget" data-toggle="collapse" style="cursor: pointer;"></span> Budget
+                                    </label>
+                                    <div class="col-md-8">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-fw fa-money"></i></span>
+                                            <input class="number" id="modal_budget" name="budget" class="moneyInput form-control" placeholder="Budget" value="0.00" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 collapse" id="input_authority" style="margin-top: 20px;">
+                                <div class="row">
+                                    <label for="authority" class="control-label col-md-4">
+                                        <span class="fa fa-close pull-left" data-target="#input_authority" data-toggle="collapse" style="cursor: pointer;"></span> Authority
+                                    </label>
+                                    <div class="col-md-8">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-fw fa-user-secret"></i></span>
+                                            <input id="modal_authority" name="authority" class="form-control" placeholder="Authority" type="text" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12" style="margin-top: 20px;">
+                            <div class="col-md-12 collapse" id="input_business_need">
+                                <div class="row">
+                                    <p class="text-red">** Separate business needs input by using a comma (,)</p>
+                                    <label for="businessNeeds" class="control-label col-md-4">
+                                        <span class="fa fa-close pull-left" data-target="#input_business_need" data-toggle="collapse" style="cursor: pointer;"></span> Business Need(s)
+                                    </label>
+                                    <div class="col-md-8">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-fw fa-th"></i></span>
+                                            <div class="bootstrap-tagsinput"><input type="text" placeholder="Business Need(s)"></div>
+                                            <input id="modal_business_need" name="bneeds" class="form-control" placeholder="Business Need(s)" data-role="tagsinput" type="text" value="" style="display: none;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 collapse" id="input_timeline" style="margin-top: 20px;">
+                                <div class="row">
+                                    <label for="timeline" class="control-label col-md-4">
+                                        <span class="fa fa-close pull-left" data-target="#input_timeline" data-toggle="collapse" style="cursor: pointer;"></span> Timeline
+                                    </label>
+                                    <div class="col-md-8">
+                                        <div class="input-group date" id="datetimepicker_timeline">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-fw fa-calendar"></i>
+                                            </div>
+                                            <input id="modal_timeline" name=  "timeline" class="form-control pull-right" type="text" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/project schedule-->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer bg-gray-light">
+                <div class="pull-right">
+                    <button class="btn bg-gray" data-dismiss="modal">
+                        Cancel
+                    </button>
+                    <button id="save-opp" class="btn bg-blue">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

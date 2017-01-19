@@ -1,0 +1,287 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="assets/css/style-2.css"/>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css"/>
+        <link rel="stylesheet" href="assets/bootstrap/dist/css/AdminLTE.min.css"/>
+        <link rel="stylesheet" href="assets/bootstrap/css/ionicons.min.css"/>
+	    <link rel="stylesheet" href="assets/bootstrap/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/aos.css"/>
+        <link rel="stylesheet" href="assets/css/_easing.scss"/>
+        <link rel="stylesheet" href="assets/css/freebie-footer-templates/css/footer-distributed.css"/>
+
+        <style>
+            ul.tab {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                border: 1px solid #ccc;
+                background-color: #9BADCB;
+            }
+
+            /* Float the list items side by side */
+            ul.tab li {
+                float:left;
+            }
+
+            /* Style the links inside the list items */
+            ul.tab li a {
+                display: inline-block;
+                color: #fdfffc;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                transition: 0.3s;
+                font-size: 17px;
+            }
+
+            /* Change background color of links on hover */
+            ul.tab li a:hover {
+                background-color: #7991ba;
+                color: #fdfffc;
+            }
+
+            /* Create an active/current tablink class */
+            ul.tab li a:focus, .active {
+                background-color: #4869a1;
+                color: #fdfffc;
+            }
+
+            /* Style the tab content */
+            .tabcontent {
+                display: none;
+                padding: 6px 12px;
+                -webkit-animation: fadeEffect 1s;
+                animation: fadeEffect 1s;
+            }
+
+            @-webkit-keyframes fadeEffect {
+                from {opacity: 0;}
+                to {opacity: 1;}
+            }
+
+            @keyframes fadeEffect {
+                from {opacity: 0;}
+                to {opacity: 1;}
+            }
+
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            td {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+                font-weight:200;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+       </style>
+
+        <title><%= page.title %></title>
+		<link rel="shortcut icon" href="assets/images/QSMS-icon.png">
+    </head>
+
+    <body class="parallax" style="background-image:url(assets/images/background.svg);">
+        <div id="wrapper">
+            <% include ../views/partials/nav.html %>
+
+            <div class="container">
+                <div class="container">
+				    <div class="box col-md-12" style="border-top-color:#2589bd;top:60px; width:70%; left:330px; position:absolute;">
+                        <h3  class="box-header" style="margin: 20px 20px 20px 30px; color:#010101; font-weight:300"> Account Info </h3>                           
+                        <div class="col-md-12 ">
+                            <div class="form-group col-md-12">
+                                <div class="col-md-10" style="margin-left:60px;">
+                                    <div class="input-group">
+                                        <input type="hidden" id="id" name="id" value="<%= user.id %>"/>
+                                        <div class="col-md-4">
+                                            <input id="first_name" class=" form-control" type="text" style="padding-left:10px; margin-right:-50px" placeholder="First Name" value="<%= user.first_name %>"></input>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input id="middle_name" class="form-control" type="text" style="padding-left:10px" placeholder="Middle Name" value="<%= user.middle_name %>"></input>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input id="last_name" class="form-control" type="text" style="padding-left:10px" placeholder="Last Name" value="<%= user.last_name %>"></input>
+                                        </div>
+                                    </div>	
+                                </div>
+                            </div>	
+                            <div class="form-group col-md-12" style="margin-left:75px;">
+                                <div class="col-md-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-fw fa-at"></i></span>
+                                        <input id="email_address" class="form-control" placeholder="Email" type="text" value="<%= user.email_address %>"></input>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12" style="margin-left:75px;">
+                                <div class="col-md-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
+                                        <input id="username" class="form-control" placeholder="Username" type="text" value="<%= user.username %>"></input>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>
+                                        <input id="password" class="form-control" placeholder="Password" type="password" value=""></input>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12" style="margin-left:75px;">
+                                <div class="col-md-4">
+                                    <a class="btn btn-block btn-social btn-info" title="Department">
+                                        <i class="fa fa-fw fa-building"></i> <%= user.department_name %>
+                                    </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a class="btn btn-block btn-social bg-purple" title="User Role">
+                                        <i class="fa fa-fw fa-users"></i> <%= user.role_name %>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12" style="margin-left:75px;">
+                                <div class="col-md-4">
+                                    <button class="btn btn-success" id="save-profile">
+                                        Save Changes
+                                    </button>
+                                </div>
+                                <!-- Display message for profile update. -->
+                                <!--<div class="col-md-4" style="color:green;">
+                                    Profile successfully updated.
+                                </div>-->
+                            </div>
+                        </div>
+				    </div>
+				</div>
+    		</div>
+            <!--PROFILE PICTURE-->
+            <div class="form-group">
+                <div class="container dp-size" style="position:absolute;left:255px; top:130px; padding:0">
+                    <img src="assets/images/placeholder-user.png"/>
+                </div>
+            </div>
+            <div class="form-group col-md-12" style="width:104%; margin-bottom:425px;">
+                <div class="col-md-11">
+                    <div class="box" style="border-top-color:#2589bd; top:400px; height:auto; background-color:#fdfffc;">
+                        <ul class="tab">
+                            <li>
+                                <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'assigned')" style="font-weight:300;">
+                                    Opportunities assigned to you
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'created')" style="font-weight:300;">
+                                    Opportunities you Created
+                                </a>
+                            </li>
+                        </ul>
+                        <div id="assigned" class="tabcontent" style="color:#000;">
+                            <table>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Opportunity</th>
+                                    <th>Project Description</th>
+                                </tr>
+                                <% var no = 1; %>
+                                <% for(var a=0; a < opportunities.rows.length; a++) { %>
+                                    <% if(opportunities.rows[a].assigned_to == user.id) { %>
+                                        <tr>
+                                            <td><%= no %></td>
+                                            <td><%= opportunities.rows[a].project_name %></td>
+                                            <td><%= opportunities.rows[a].project_description %></td>
+                                            <% no++; %>
+                                        </tr>
+                                    <% } %>
+                                <% } %>
+                            </table>
+                        </div>
+                        <div id="created" class="tabcontent" style="color:#000;">
+                            <table>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Opportunity</th>
+                                    <th>Project Description</th>
+                                </tr>
+                                <% var no = 1; %>
+                                <% for(var b=0; b < opportunities.rows.length; b++) { %>
+                                    <% if(opportunities.rows[b].user_id == user.id) { %>
+                                        <tr>
+                                            <td><%= no %></td>
+                                            <td><%= opportunities.rows[b].project_name %></td>
+                                            <td><%= opportunities.rows[b].project_description %></td>
+                                            <% no++; %>
+                                        </tr>
+                                    <% } %>
+                                <% } %>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <% include ../views/partials/logout_modal.html %>
+
+        <script type="text/javascript" src="assets/jquery/jquery.min.js"></script>
+ 	    <script type="text/javascript" src="assets/bootstrap/js/bootstrap.js"></script>
+        <script type="text/javascript" src="profile.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(document).on('click', 'a[href*="#"]', function() {
+                    var slashedHash = '#/' + this.hash.slice(1);
+                    if ( this.hash ) {
+                        if ( slashedHash === location.hash ) {
+                            $.smoothScroll({scrollTarget: this.hash});
+                        } else {
+                            $.bbq.pushState(slashedHash);
+                        }
+                        return false;
+                    }
+                });
+
+                $(window).bind('hashchange', function(event) {
+                    var tgt = location.hash.replace(/^#\/?/,'');
+                    if ( document.getElementById(tgt) ) {
+                        $.smoothScroll({scrollTarget: '#' + tgt});
+                    }
+                });
+
+                $(window).trigger('hashchange');
+                });
+                $('.toggle').on('click', function() {
+                $('.button-container').stop().addClass('active');
+            });
+
+            function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
+    </body>
+</html>

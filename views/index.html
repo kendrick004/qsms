@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="assets/css/style-2.css"/>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css"/>
+        <link rel="stylesheet" href="assets/bootstrap/dist/css/AdminLTE.min.css"/>
+        <link rel="stylesheet" href="assets/bootstrap/css/ionicons.min.css"/>
+	    <link rel="stylesheet" href="assets/bootstrap/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/aos.css"/>
+        <link rel="stylesheet" href="assets/css/_easing.scss"/>
+        <link rel="stylesheet" href="assets/css/freebie-footer-templates/css/footer-distributed.css"/>
+
+        <title><%= page.title %></title>
+		<link rel="shortcut icon" href="assets/images/QSMS-icon.png">
+    </head>
+
+    <body class="background" id="style-2">
+        <div id="wrapper">
+            <% include ../views/partials/nav.html %>
+
+            <div class="wrapper col-md-12 col-xs-12 col-sm-12 col-lg-12 col-sm-offset-1 col-xs-offset-3 col-md-offset-0" style="padding:0">
+                <ul style="padding:0; top:0">
+                <% for(var i=0; i < scs_summary.rows.length; i++) { %>
+                    <li id="SC0" class="opportunities col-xs-6 col-sm-6 col-md-6 col-lg-6" style="margin-top:25px;">
+                        <div class="box box-red-orange box-header col-xs-7 col-sm-7 col-md-3 col-lg-3" style="background-color:#ececec; margin:0; margin-top:25px;float:left;" >
+                            <h4 class=""><b>Sales Cycle <%= i %></b> <%= scs_summary.rows[i].description %></h4>
+                            <div style="">
+                                <!-- Proto Opportunity-->
+                                <div style="width:auto; margin-bottom:20px;">
+                                    <div class="box box-success box-header input-container" style="margin:0">
+                                        <!--Body here-->
+                                        <div class="col-md-12">
+                                            <div class="col-md-10">
+                                                <h2>Opportunities <br/> Available</h2>
+                                            </div>
+                                        <div class="col-md-2">
+                                            <h1 style="font-size:60px">
+                                                <%= scs_summary.rows[i].count_opportunities %>
+                                            </h1>
+                                        </div>
+                                        <div class="divider"></div>
+                                            <div class="col-md-7 col-sm-7 col-xs-7">
+                                                <h5 class="">Budget:</h5>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-5">
+                                                <h4 class="pull-right">₱ <%= numeral(scs_summary.rows[i].sum_budget).format('0,0.00') %></h4>
+                                            </div>
+                                            <div class="col-md-7 col-sm-7 col-xs-7">
+                                                <h5 class="">Total Revenue:</h5>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-5">
+                                                <h4 class="pull-right">₱ <%= numeral(scs_summary.rows[i].sum_total_revenue).format('0,0.00') %></h4>
+                                            </div>
+                                            <div class="col-md-7 col-sm-7 col-xs-7">
+                                                <h5 class="">Gross Profit:</h5>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-5">
+                                                <h4 class="pull-right">₱ <%= numeral(scs_summary.rows[i].sum_gross_profit).format('0,0.00') %></h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Footer here-->
+                            </div><!-- proto overflow-->
+                        </div> <!--card-->
+                    </li><!--Cards-->
+                <% } %>
+                </ul>
+            </div>
+        </div>
+
+        <% include ../views/partials/logout_modal.html %>
+        <script type="text/javascript" src="assets/jquery/jquery.min.js"></script>
+	    <script type="text/javascript" src="assets/bootstrap/js/bootstrap.js"></script>
+    </body>
+</html>

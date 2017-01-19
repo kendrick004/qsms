@@ -1,0 +1,128 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="assets/css/style-2.css"/>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css"/>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-datetimepicker.css"/>
+        <link rel="stylesheet" href="assets/bootstrap/dist/css/AdminLTE.min.css"/>
+        <link rel="stylesheet" href="assets/bootstrap/css/ionicons.min.css"/>
+	    <link rel="stylesheet" href="assets/bootstrap/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/aos.css"/>
+        <link rel="stylesheet" href="assets/css/_easing.scss"/>
+        <link rel="stylesheet" href="assets/css/freebie-footer-templates/css/footer-distributed.css"/>
+
+        <title><%= page.title %></title>
+		<link rel="shortcut icon" href="assets/images/QSMS-icon.png">
+    </head>
+
+    <body class="background" id="style-2">
+        <!--SIDEBAR WRAPPER-->
+        <div id="wrapper">
+            <% include ../views/partials/nav.html %>
+            <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 col-sm-offset-1 col-xs-offset-3 col-md-offset-0" style="padding:0">
+                <ul style="padding:0; top:0">
+                    <!--Proto cards-->
+                    <!-- /* remove - 10 in the for length when all cycles are covered */ -->
+                    <% for(var j=0; j < sales_cycle.rows.length - 10; j++) { %>
+                        <li class="opportunities col-xs-7 col-sm-7 col-md-3 col-lg-3" style="margin-top:25px;float:left">
+                            <div class="box box-red-orange box-header col-xs-7 col-sm-7 col-md-3 col-lg-3" style="background-color:#ececec; margin:0; margin-top:25px;float:left;" >
+                                <h4 class="text-center"><b>Sale Cycle <%= j %></b> <%= sales_cycle.rows[j].description %></h4>
+                                <div id="SC<%= j %>" style="max-height:400px; overflow-y:auto;" id="style-2">
+                                    <% for(var i=0; i < opportunities.rows.length; i++) { %>
+                                        <% if(j + 1 == opportunities.rows[i].sc_stage) { %>
+                                            <% if(j + 1 == 1) { %>
+                                                <div id="opp-<%= opportunities.rows[i].id %>" style="width:auto; margin-bottom:20px;">
+                                                    <div class="box box-success box-header input-container" style="margin:0">
+                                                        <div class="overlay" style="display:none;">
+                                                            <i class="fa fa-refresh fa-spin"></i>
+                                                        </div>
+                                                        <button id="<%= opportunities.rows[i].id %>" class="del-opp pull-right" href="#" data-target="#" style="margin:0; padding:0; background-color:transparent; border:none; outline:none; height:auto; width:auto;">
+                                                            <span class="fa fa-close" style="color:#0f0f0f; cursor:pointer;"></span>
+                                                        </button>
+                                                        <button id="<%= opportunities.rows[i].id %>" class="edit-opp pull-left" href="#" data-target="#" style="margin:0; padding:0; background-color:transparent; border:none; outline:none; height:auto; width:auto;">
+                                                            <span class="fa fa-pencil" style="color:#0f0f0f;cursor:pointer;"></span>
+                                                        </button>
+                                                        <h5 class="box-header">
+                                                            <input class="project-name" project-id="<%= opportunities.rows[i].id %>" id="header" size="" maxlength="50" type="text" placeholder="Project name..." style="z-index:1;cursor:pointer;border:hidden; background-color:transparent; outline:none; width:100%;" value="<%= opportunities.rows[i].project_name %>"/>
+                                                        </h5>
+                                                        <div class="box-footer">
+                                                            <a><span class="move-opp btn btn-xs bg-green fa fa-chevron-right pull-right" mode="forward" stage="<%= opportunities.rows[i].sc_stage %>" id="<%= opportunities.rows[i].id %>" style="color:#0f0f0f; cursor:pointer;"></span></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <% } else if(j + 1 == 4) { %>
+                                                <div id="opp-<%= opportunities.rows[i].id %>" style="width:auto; margin-bottom:20px;">
+                                                    <div class="box box-success box-header input-container" style="margin:0">
+                                                        <div class="overlay" style="display:none;">
+                                                            <i class="fa fa-refresh fa-spin"></i>
+                                                        </div>
+                                                        <button id="<%= opportunities.rows[i].id %>" class="del-opp pull-right" href="#" data-target="#" style="margin:0; padding:0; background-color:transparent; border:none; outline:none; height:auto; width:auto;">
+                                                            <span class="fa fa-close" style="color:#0f0f0f; cursor:pointer;"></span>
+                                                        </button>
+                                                        <button id="<%= opportunities.rows[i].id %>" class="edit-opp pull-left" href="#" data-target="#" style="margin:0; padding:0; background-color:transparent; border:none; outline:none; height:auto; width:auto;">
+                                                            <span class="fa fa-pencil" style="color:#0f0f0f;cursor:pointer;"></span>
+                                                        </button>
+                                                        <h5 class="box-header">
+                                                            <input class="project-name" project-id="<%= opportunities.rows[i].id %>" id="header" size="" maxlength="50" type="text" placeholder="Project name..." style="z-index:1;cursor:pointer;border:hidden; background-color:transparent; outline:none; width:100%;" value="<%= opportunities.rows[i].project_name %>"/>
+                                                        </h5>
+                                                        <div class="box-footer">
+                                                            <a><span class="move-opp btn btn-xs bg-green fa fa-chevron-left pull-right" mode="backward" stage="<%= opportunities.rows[i].sc_stage %>" id="<%= opportunities.rows[i].id %>" style="color:#0f0f0f; cursor:pointer;"></span></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <% } else { %>
+                                                <div id="opp-<%= opportunities.rows[i].id %>" style="width:auto; margin-bottom:20px;">
+                                                    <div class="box box-success box-header input-container" style="margin:0">
+                                                        <div class="overlay" style="display:none;">
+                                                            <i class="fa fa-refresh fa-spin"></i>
+                                                        </div>
+                                                        <button id="<%= opportunities.rows[i].id %>" class="del-opp pull-right" href="#" data-target="#" style="margin:0; padding:0; background-color:transparent; border:none; outline:none; height:auto; width:auto;">
+                                                            <span class="fa fa-close" style="color:#0f0f0f; cursor:pointer;"></span>
+                                                        </button>
+                                                        <button id="<%= opportunities.rows[i].id %>" class="edit-opp pull-left" href="#" data-target="#" style="margin:0; padding:0; background-color:transparent; border:none; outline:none; height:auto; width:auto;">
+                                                            <span class="fa fa-pencil" style="color:#0f0f0f;cursor:pointer;"></span>
+                                                        </button>
+                                                        <h5 class="box-header">
+                                                            <input class="project-name" project-id="<%= opportunities.rows[i].id %>" id="header" size="" maxlength="50" type="text" placeholder="Project name..." style="z-index:1;cursor:pointer;border:hidden; background-color:transparent; outline:none; width:100%;" value="<%= opportunities.rows[i].project_name %>"/>
+                                                        </h5>
+                                                        <div class="box-footer">
+                                                            <a><span class="move-opp btn btn-xs bg-green fa fa-chevron-right pull-right" mode="forward" stage="<%= opportunities.rows[i].sc_stage %>" id="<%= opportunities.rows[i].id %>" style="color:#0f0f0f; cursor:pointer;"></span></a>
+                                                            <a><span class="move-opp btn btn-xs bg-green fa fa-chevron-left pull-right" mode="backward" stage="<%= opportunities.rows[i].sc_stage %>" id="<%= opportunities.rows[i].id %>" style="color:#0f0f0f; cursor:pointer;"></span></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <% } %>
+                                        <% } %>
+                                    <% } %>
+                                </div>
+                                <% if(j + 1 == 1) { %>
+                                    <div class="box-footer" style="background-color:transparent; border-top:#b0b0b0 solid 1px">
+                                        <button id="show-new-project" accesskey="a" class="btn btn-sm btn-block btn-hover-gray" style="background-color:transparent">
+                                            <h5 style="color:#b0b0b0"><span class="fa fa-plus"></span> Add an Opportunity</h5>
+                                        </button>
+                                        <div id="new-project" style="display:none;">
+                                            <input id="new-project-name" style="width:100%; padding:5px; border-radius:3px; border:thin #bababa solid; font-size:14px; margin-bottom:5px;" placeholder="Project Name..." type="text"></input>
+                                            <a id="cancel-project"><span class="btn btn-xs bg-hover-gray fa fa-ban pull-right" style="color:#b0b0b0; cursor:pointer;"></span></a>
+                                            <a id="add-project"><span class="btn btn-xs bg-green fa fa-plus pull-right" style="color:#0f0f0f; cursor:pointer;"></span></a>
+                                        </div>
+                                    </div>          
+                                <% } %>
+                            </div>
+                        </li>
+                    <% } %>
+                </ul> 
+            </div>
+        </div>
+            
+        <% include ../views/partials/opportunity_modal.html %>
+        <% include ../views/partials/logout_modal.html %>
+        <script type="text/javascript" src="assets/jquery/jquery.min.js"></script>
+	    <script type="text/javascript" src="assets/bootstrap/js/bootstrap.js"></script>
+	    <script type="text/javascript" src="moment/moment.js"></script>
+	    <script type="text/javascript" src="assets/bootstrap/js/bootstrap-datetimepicker.js"></script>
+        <script type="text/javascript" src="opportunities.js"></script>
+    </body>
+</html>
