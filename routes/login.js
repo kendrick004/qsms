@@ -52,14 +52,12 @@ router.post('/', function(request, response, next) {
                         msg: 'Login Success!'
                     };
                     response.send(JSON.stringify(cb));
-                    // response.redirect('/');
                 } else {
                     var cb = {
                         success: 0,
                         msg: 'Username or password is incorrect.'
                     };
                     response.send(JSON.stringify(cb));
-                    // response.send("Username or password is incorrect.");                    
                 }
             } else {
                 var cb = {
@@ -67,7 +65,6 @@ router.post('/', function(request, response, next) {
                     msg: 'Username or password is incorrect.'
                 };
                 response.send(JSON.stringify(cb));
-                // response.send("Username or password is incorrect.");
             }
         } else {
             response.send("Something bad happened. Try again.");
