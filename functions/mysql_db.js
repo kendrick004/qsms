@@ -1,8 +1,8 @@
 var mysql = require('mysql'),
 	async = require('async');
 
-var db_name = 'qsms_db'; //for localhost mysql database
-// var db_name = 'ad_7a7185b21d0a2ae'; //for hosted mysql database
+// var db_name = 'qsms_db'; //for localhost mysql database
+var db_name = 'ad_7a7185b21d0a2ae'; //for hosted mysql database
 
 var PRODUCTION_DB = db_name;
 var TEST_DB = db_name;
@@ -13,22 +13,22 @@ exports.MODE_PRODUCTION = db_name;
 // mysql://admin:YAMEBRBJPNCOEYBL@sl-us-dal-9-portal.0.dblayer.com:18514/compose
 
 /* for localhost mysql database */
-var config = {
-    host: 'localhost',
-    user: 'root',
-    password: 'password',
-	name: 'qsms_db',
-    port: 3306
-};
-
-/* for hosted mysql database */
 // var config = {
-//     host: 'us-cdbr-iron-east-04.cleardb.net',
-//     user: 'b7551b781ed3ea',
-//     password: 'e1756c85',
-//     name: db_name,
+//     host: 'localhost',
+//     user: 'root',
+//     password: 'password',
+// 	name: 'qsms_db',
 //     port: 3306
 // };
+
+/* for hosted mysql database */
+var config = {
+    host: 'us-cdbr-iron-east-04.cleardb.net',
+    user: 'b7551b781ed3ea',
+    password: 'e1756c85',
+    name: db_name,
+    port: 3306
+};
 
 
 var state = {
