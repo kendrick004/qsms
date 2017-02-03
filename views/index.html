@@ -26,7 +26,7 @@
                 <% for(var i=0; i < scs_summary.rows.length; i++) { %>
                     <li id="SC0" class="opportunities col-xs-6 col-sm-6 col-md-6 col-lg-6" style="margin-top:25px;">
                         <div class="box box-red-orange box-header col-xs-7 col-sm-7 col-md-3 col-lg-3" style="background-color:#ececec; margin:0; margin-top:25px;float:left;" >
-                            <h4 class=""><b>Sales Cycle <%= i %></b> <%= scs_summary.rows[i].description %></h4>
+                            <h4 class=""><b>Sales Cycle <%= scs_summary.rows[i].sc_stage %></b> <%= scs_summary.rows[i].description %></h4>
                             <div style="">
                                 <!-- Proto Opportunity-->
                                 <div style="width:auto; margin-bottom:20px;">
